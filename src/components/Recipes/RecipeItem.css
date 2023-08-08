@@ -1,0 +1,22 @@
+.recipe-item{
+    width: 400px;
+    height: 400px;
+    background-color: chocolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 30px;
+}
+
+.recipe-item img{
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.recipe-item h2{
+    font-size: 40px;
+    margin: 10px;
+}

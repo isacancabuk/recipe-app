@@ -1,0 +1,20 @@
+.new-recipe{
+    padding: 50px;
+    margin: 50px;
+    width: 800px;
+    background-color: wheat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-recipe button{
+    margin: 10px;
+    cursor: pointer;
+    background-color: aliceblue;
+    width: 150px;
+    height: 50px;
+    font-size: 26px;
+    text-align: center;
+    border: 0;
+}

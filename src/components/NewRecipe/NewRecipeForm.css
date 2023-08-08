@@ -1,0 +1,13 @@
+.new-recipe-form{
+    width: 100%;
+}
+
+.new-recipe-form .controls{
+    display: flex;
+    flex-direction: column;
+}
+
+.new-recipe-form .actions{
+    display: flex;
+    justify-content: space-between;
+}
