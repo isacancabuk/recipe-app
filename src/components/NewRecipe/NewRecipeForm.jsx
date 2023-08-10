@@ -21,7 +21,7 @@ const NewRecipeForm = (props) => {
       recipeDescription: description,
     };
 
-    props.onNewRecipe(newRecipe);
+    props.onNewRecipeHandler(newRecipe);
     setUrl("");
     setName("");
     setDescription("");

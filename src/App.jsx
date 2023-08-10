@@ -24,10 +24,29 @@ function App() {
   const [recipes, setRecipes] = useState(initRecipes);
   const newRecipeHandler = (newRecipe) =>
     setRecipes((prevRecipes) => [newRecipe, ...prevRecipes]);
+
+  const deleteRecipeHandler = (selectedIndex) => {
+    setRecipes((prevRecipes) => {
+      const updatedRecipes = prevRecipes.filter(
+        (recipe) => recipe.id !== prevRecipes[selectedIndex].id
+      );
+      return updatedRecipes;
+    });
+  };
+
+  let recipeContent = <p>There is no recipe! Would you like to add one?</p>;
+  if (recipes.length > 0)
+    recipeContent = (
+      <Recipes
+        onDeleteRecipeHandler={deleteRecipeHandler}
+        recipesArray={recipes}
+      />
+    );
+
   return (
     <main>
-      <NewRecipe onAddRecipe={newRecipeHandler} />
-      <Recipes data={recipes} />
+      <NewRecipe onNewRecipeHandler={newRecipeHandler} />
+      {recipeContent}
     </main>
   );
 }
