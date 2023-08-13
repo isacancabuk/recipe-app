@@ -2,12 +2,12 @@
     width: 100%;
 }
 
-.new-recipe-form .controls{
+.controls{
     display: flex;
     flex-direction: column;
 }
 
-.new-recipe-form .actions{
+.actions{
     display: flex;
     justify-content: space-between;
 }

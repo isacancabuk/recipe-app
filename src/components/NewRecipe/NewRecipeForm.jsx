@@ -5,6 +5,7 @@ const NewRecipeForm = (props) => {
   const [url, setUrl] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+
   const inputHandler = (type, data) => {
     if (type === "url") setUrl(data);
     else if (type === "name") setName(data);
@@ -52,7 +53,7 @@ const NewRecipeForm = (props) => {
           />
         </div>
         <div className="actions">
-          <button type="button" onClick={props.onEditing}>
+          <button type="button" onClick={props.onStopHandler}>
             Cancel
           </button>
           <button type="submit">Add Recipe</button>

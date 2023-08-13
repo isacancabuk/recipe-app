@@ -3,20 +3,22 @@ import "./NewRecipe.css";
 import NewRecipeForm from "./NewRecipeForm";
 
 const NewRecipe = (props) => {
-  const [isEditing, setIsEditing] = useState(false);
-  const isEditingHandler = () => setIsEditing(true);
-  const stopEditing = () => setIsEditing(false);
+  const [isAdding, setIsAdding] = useState(false);
+  const isAddingHandler = () => setIsAdding(true);
+  const stopHandler = () => setIsAdding(false);
 
   const newRecipeHandler = (data) => {
     props.onNewRecipeHandler(data);
-    setIsEditing(false);
+    setIsAdding(false);
   };
+
   return (
     <div className="new-recipe">
-      {!isEditing && <button onClick={isEditingHandler}>Add Recipe</button>}
-      {isEditing && (
+      {!isAdding && <button onClick={isAddingHandler}>Add Recipe</button>}
+      {isAdding && (
         <NewRecipeForm
-          onEditing={stopEditing}
+          editRecipeData={props.editRecipeData}
+          onStopHandler={stopHandler}
           onNewRecipeHandler={newRecipeHandler}
         />
       )}
