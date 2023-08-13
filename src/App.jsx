@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Recipes from "./components/Recipes/Recipes";
 import NewRecipe from "./components/NewRecipe/NewRecipe";
@@ -20,7 +20,6 @@ const initRecipes = [
     recipeDescription: "RecipeDescription3",
   },
 ];
-
 const initData = {
   state: false,
   selectedIndex: -1,
@@ -28,8 +27,14 @@ const initData = {
 };
 
 function App() {
-  const [recipes, setRecipes] = useState(initRecipes);
+  const [recipes, setRecipes] = useState(() => {
+    return JSON.parse(localStorage.getItem("recipes")) || [];
+  });
   const [editRecipeData, setEditRecipeData] = useState(initData);
+
+  useEffect(() => {
+    localStorage.setItem("recipes", JSON.stringify(recipes));
+  });
 
   const newRecipeHandler = (newRecipe) =>
     setRecipes((prevRecipes) => [newRecipe, ...prevRecipes]);
